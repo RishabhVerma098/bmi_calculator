@@ -24,36 +24,32 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             children: <Widget>[
               Expanded(
-                  child: GestureDetector(
-                onTap: () {
+                  child: ResusableContainer(
+                onPress: () {
                   setState(() {
                     selectedGender = Gender.male;
                   });
                 },
-                child: ResusableContainer(
-                  cardChild: CardInput(
-                      fontAwesomeIcon: FontAwesomeIcons.mars,
-                      text: 'Male',
-                      color: selectedGender == Gender.male
-                          ? activeColor
-                          : inActiveColor),
-                ),
+                cardChild: CardInput(
+                    fontAwesomeIcon: FontAwesomeIcons.mars,
+                    text: 'Male',
+                    color: selectedGender == Gender.male
+                        ? activeColor
+                        : inActiveColor),
               )),
               Expanded(
-                  child: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedGender = Gender.female;
-                  });
-                },
-                child: ResusableContainer(
-                    cardChild: CardInput(
-                        fontAwesomeIcon: FontAwesomeIcons.venus,
-                        text: 'Female',
-                        color: selectedGender == Gender.female
-                            ? activeColor
-                            : inActiveColor)),
-              )),
+                  child: ResusableContainer(
+                      onPress: () {
+                        setState(() {
+                          selectedGender = Gender.female;
+                        });
+                      },
+                      cardChild: CardInput(
+                          fontAwesomeIcon: FontAwesomeIcons.venus,
+                          text: 'Female',
+                          color: selectedGender == Gender.female
+                              ? activeColor
+                              : inActiveColor))),
             ],
           ),
         ),
