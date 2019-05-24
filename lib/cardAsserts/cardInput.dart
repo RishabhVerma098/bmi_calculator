@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'commonContents.dart';
 
 class CardInput extends StatelessWidget {
   final Color color;
@@ -24,7 +25,7 @@ class CardInput extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(fontSize: 25),
+          style: bottomText,
         ),
       ],
     );
